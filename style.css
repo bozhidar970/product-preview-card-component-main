@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background-color: rgb(213, 210, 211);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card__picture,
+.card__picture img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.card__picture img {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem
+}
+
+.card__category {
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: gray;
+}
+
+.card__title {
+  margin-bottom: 1.25rem;
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+ 
+.card__description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: gray;
+}
+
+.card__price {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+ 
+.price--new {
+  font-family: "Fraunces", serif;;
+  font-size: 2rem;
+  color: rgb(47, 97, 69);
+}
+ 
+.price--old {
+  font-size: 0.8125rem;
+  color: gray;
+}
+ 
+/* ---------- Бутон ---------- */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  background-color: rgb(47, 97, 69);
+  color: white;
+  font-family: "Montserrat", sans-serif;;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+ 
+.btn__icon {
+  width: 15px;
+  height: 16px;
+}
+ 
+.btn:hover,
+.btn:focus-visible {
+  background-color: rgb(35, 53, 40);
+}
+ 
+.btn:focus-visible {
+  outline: 3px solid rgb(47, 97, 69);
+  outline-offset: 3px;
+}
+ 
+/* ---------- Responsive: мобилна версия ---------- */
+@media (max-width: 600px) {
+  .card {
+    grid-template-columns: 1fr;   /* една колона: снимка отгоре */
+    max-width: 380px;
+  }
+ 
+  .card__picture img {
+    height: auto;
+    aspect-ratio: 375 / 240;      /* на телефон снимката е по-нисък "банер" */
+  }
+ 
+  .card__content {
+    padding: 1.5rem;
+  }
+}
+ 
+
